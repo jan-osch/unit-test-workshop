@@ -9,7 +9,7 @@ describe('myFile', () => {
         })
 
         it('should be a function', () => {
-            expect(typeof circleArea).to.equal('function');
+            expect(typeof circleArea).to.equal('function')
         })
     })
 })
