@@ -20,6 +20,9 @@
 * chai - assertion library
 * sinon - mocking
 
+## mocha
+* only, x i tak dalej
+
 ## Testy jednostkowe, integracyjne, systemowe, akceptacyjne?
 
 
