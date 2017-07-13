@@ -4,11 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "mocha --recursive example **/*.spec.js",
-        "test-watch": "mocha --recursive --watch example **/*.spec.js",
+        "test": "mocha --recursive **/*.spec.js",
+        "test-watch": "mocha --recursive --watch **/*.spec.js",
         "lint": "eslint examples",
         "fix": "eslint --fix examples",
-        "cover": "rm -Rf coverage && nyc --reporter=html mocha --recursive examples **/*.js"
+        "cover": "rm -Rf coverage && nyc --reporter=html mocha --recursive examples **/*.js",
+        "mutate": "rm -Rf .stryker-tmp && stryker run stryker.conf.js"
     },
     "repository": {
         "type": "git",
@@ -28,7 +29,12 @@
         "eslint-plugin-import": "^2.7.0",
         "mocha": "^3.4.2",
         "pre-commit": "^1.2.2",
-        "sinon": "^2.3.7"
+        "sinon": "^2.3.7",
+        "stryker": "^0.6.6",
+        "stryker-api": "^0.5.5",
+        "stryker-html-reporter": "^0.4.6",
+        "stryker-mocha-framework": "^0.1.3",
+        "stryker-mocha-runner": "^0.4.3"
     },
     "pre-commit": [
         "lint",
