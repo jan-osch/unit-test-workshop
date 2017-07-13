@@ -1,0 +1,18 @@
+{
+    "env": {
+        "mocha": true,
+        "node": true
+    },
+    "extends": "airbnb-base",
+    "rules": {
+        "no-console": "off",
+        "indent": [
+            "error",
+            4
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
+    }
+}
