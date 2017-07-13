@@ -6,7 +6,7 @@
 * when using mocha return promises in from the `it`
 
 
-# Testy jednostkowe
+## Testy jednostkowe
 ## Po co testy?
 * Testy są dobre
 * Pozwalają uruchomić kawałek kodu w izolacji
@@ -15,8 +15,18 @@
 * Testy sprawdzają też środowisko w którym są uruchamiane, wersje, zależności, polyfille itp
 * **Programista powinien pisać testy jednostkowe do swojego kodu tak aby tworzony kod był łatwy do przetestowania**
 
-# Testy jednostkowe, integracyjne, systemowe, akceptacyjne?
+## Podstawowe narzędzia:
+* mocha - test runner
+* chai - assertion library
+* sinon - mocking
 
+## Testy jednostkowe, integracyjne, systemowe, akceptacyjne?
+
+
+## Kiedy pisać testy?
+* Gdy mamy jasno zdefiniowane wymagania - test first - używamy TDD
+* Gdy poszukujemy, test after
+* Ale testuj!
 
 ## Kod który ciężko przetestować:
 * Kod który ciężko uruchomić - kod w kontrolerach, callbackach na kolejce - hooki w mongoosie - kod który ma dużo zależności 
@@ -27,3 +37,6 @@
 * Wydzielić logikę do osobnych serwisów, publicznie dostępnych metod
 * Zdefiniować co jest publiczne co jest prywatne w kodzie - testować tylko przez publiczny interfejs
 
+## Przydatne narzędzia
+* eslint --fix
+* precommit

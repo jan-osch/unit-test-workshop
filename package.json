@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "mocha --recursive example **/*.spec.js",
+        "test-watch": "mocha --recursive --watch example **/*.spec.js",
         "lint": "eslint examples",
         "fix": "eslint --fix examples"
     },
