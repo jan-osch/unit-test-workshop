@@ -1,3 +1,5 @@
+const { get, each } = require('lodash')
+
 const { PI, pow } = Math
 
 exports.circleArea = (radius) => {
@@ -14,4 +16,21 @@ exports.circleCircumference = (radius) => {
     }
 
     return 2 * PI * radius
+}
+
+exports.prepareExcelData = (data, metricKey) => {
+    const series = get(data, 'series', [])
+    const body = []
+
+    each(series, (serie, i) => {
+        const row = [get(serie, 'name', `Serie ${i + 1}`)]
+
+        each(get(serie, 'data', []), (brand) => {
+            row.push(get(brand, metricKey, ''))
+        })
+
+        body.push(row)
+    })
+
+    return body
 }

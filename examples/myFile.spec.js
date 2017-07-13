@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const { circleArea, circleCircumference } = require('./myFile')
+const { circleArea, circleCircumference, prepareExcelData } = require('./myFile')
 
 describe('myFile', () => {
     describe('circleArea', () => {
@@ -45,6 +45,20 @@ describe('myFile', () => {
 
         it('should throw an error if radius is negative', () => {
             expect(() => circleCircumference(-1)).to.throw()
+        })
+    })
+
+    describe('prepareExcelData', () => {
+        it('should return an empty header', () => {
+            const actual = prepareExcelData({}, 'metric')
+            const expected = []
+            expect(actual).to.deep.equal(expected)
+        })
+
+        it('should return an empty header', () => {
+            const actual = prepareExcelData([], 'metric')
+            const expected = []
+            expect(actual).to.deep.equal(expected)
         })
     })
 })
