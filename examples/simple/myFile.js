@@ -23,7 +23,7 @@ exports.prepareExcelData = (data, metricKey) => {
     const body = []
 
     each(series, (serie, i) => {
-        const row = [get(serie, 'name', `Serie ${i + 1}`)]
+        const row = [get(serie, 'name', `Series ${i + 1}`)]
 
         each(get(serie, 'data', []), (brand) => {
             row.push(get(brand, metricKey, ''))

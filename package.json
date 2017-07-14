@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive **/*.spec.js",
-    "test-watch": "mocha --recursive --watch **/*.spec.js",
+    "test": "mocha --recursive examples/**/*.spec.js",
+    "test-watch": "mocha --recursive --watch examples/**/*.spec.js",
     "lint": "eslint examples",
     "fix": "eslint --fix examples",
-    "cover": "rm -Rf coverage && nyc --reporter=html mocha --recursive examples **/*.js",
+    "cover": "rm -Rf coverage && nyc --reporter=html mocha --recursive examples/**/*.js",
     "mutate": "rm -Rf .stryker-tmp && stryker run stryker.conf.js"
   },
   "repository": {
