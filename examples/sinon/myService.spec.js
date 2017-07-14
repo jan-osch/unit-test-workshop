@@ -11,14 +11,14 @@ describe('DashboardService', () => {
     })
 
     afterEach(() => {
-        sandbox.restore()
+        sandbox.restore() // test without sandbox
     })
 
     describe('prepareUser', () => {
         it('should assign user first name and second name if name param is present', () => {
             const user = new User('programmer')
             sandbox.spy(user, 'setFirstName')
-            sandbox.spy(user, 'setSecondName')
+            sandbox.spy(user, 'setSecondName') // move this to upper scope
 
             DashboardService.prepareUser(user, { name: 'Robert Kubica' })
 
@@ -26,6 +26,16 @@ describe('DashboardService', () => {
             expect(user.setFirstName.getCall(0).args[0]).to.equal('Robert')
             expect(user.setSecondName.callCount).to.equal(1)
             expect(user.setSecondName.getCall(0).args[0]).to.equal('Kubica')
+        })
+
+        it('should firstName param is present but name is missing should assign just firstName', () => {
+            const user = new User('programmer')
+            sandbox.spy(user, 'setFirstName')
+
+            DashboardService.prepareUser(user, { firstName: 'Jacek' })
+
+            expect(user.setFirstName.callCount).to.equal(1)
+            expect(user.setFirstName.getCall(0).args[0]).to.equal('Jacek')
         })
     })
 

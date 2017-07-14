@@ -32,9 +32,10 @@ exports.DashboardService = class DashboardService {
             const [fistName, secondName] = params.name.split(' ')
             user.setFirstName(fistName)
             user.setSecondName(secondName)
+        } else if (params.firstName) {
+            user.setFirstName(params.firstName)
         }
     }
-
 
     static async createWidget(widgetType) {
         await delay(2000)
@@ -53,7 +54,6 @@ exports.DashboardService = class DashboardService {
             widgets: createdWidgets,
         }
     }
-
 
 }
 
