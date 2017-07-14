@@ -30,7 +30,7 @@ describe('DashboardService', () => {
     })
 
     describe('createGroup', () => {
-        xit('should create a dashboard with widgets for each given type', async function () {
+        xit('should create a dashboard with widgets for each given type', async function testWithTimeout() {
             this.timeout(10000)
             const expected = {
                 name: 'Dashboard Home',
