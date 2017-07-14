@@ -1,19 +1,14 @@
 # unit-test-workshop
-
-
-* always use rewire `revert`
-* always use sinon `sandbox` and `restore`
-* when using mocha return promises in from the `it`
-
-
-## Testy jednostkowe
 ## Po co testy?
 * Testy są dobre
+* [Testy poprawiają jakość kodu](https://www.infoq.com/news/2009/03/TDD-Improves-Quality)
 * Pozwalają uruchomić kawałek kodu w izolacji
 * Zapewniają dokumentację do kodu
 * Dają pewność przy wprowadzaniu zmian - umożliwiają refactoring
 * Testy sprawdzają też środowisko w którym są uruchamiane, wersje, zależności, polyfille itp
 * **Programista powinien pisać testy jednostkowe do swojego kodu tak aby tworzony kod był łatwy do przetestowania**
+* Testy jednostkowe, integracyjne, systemowe, akceptacyjne?
+* Piramida testowania
 
 ## Podstawowe narzędzia:
 * mocha - test runner
@@ -21,15 +16,28 @@
 * sinon - mocking
 
 ## mocha
-* only, x i tak dalej
+* `describe` to zestaw testów - powinna dzielić testy na domeny
+* `it` to pojedynczy przypadek testowy
+* only, x 
+* aby ustawić timeout - musisz użyć `function` jako callbacka
 
-## Testy jednostkowe, integracyjne, systemowe, akceptacyjne?
+## chai
+* expect 
+* dzielisz test na given, when, then
 
-
+## sinon
+* spy - obserwuje jakiś kawałek kodu
+* stub - podmienia implementację 
+* zawsze używaj `sandbox` i `restore`
+ 
+## Supertest
+* eksportujemy router i testujemy in memory
+* używamy expecta wbudowanego
+ 
 ## Kiedy pisać testy?
 * Gdy mamy jasno zdefiniowane wymagania - test first - używamy TDD
 * Gdy poszukujemy, test after
-* Ale testuj!
+* Ale testuj
 
 ## Kod który ciężko przetestować:
 * Kod który ciężko uruchomić - kod w kontrolerach, callbackach na kolejce - hooki w mongoosie - kod który ma dużo zależności 
@@ -38,8 +46,12 @@
 
 ## Jak pisać kod łatwiejszy do przetestowania?
 * Wydzielić logikę do osobnych serwisów, publicznie dostępnych metod
+* Dzielimy aplikację na warstwy abstrakcji
+* "Don't Mock What You Don't Own". Buduj wrappery na zewnętrzne zależności
 * Zdefiniować co jest publiczne co jest prywatne w kodzie - testować tylko przez publiczny interfejs
 
 ## Przydatne narzędzia
 * eslint --fix
 * precommit
+* istanbul, nyc
+* stryker
