@@ -6,8 +6,6 @@ const app = express()
 app.use(bodyParser.json())
 
 app.post('/user', (req, res) => {
-
-    console.log(req.body.name)
     if (!req.body.name) {
         return res.status(400).json({ error: ' name param is missing' })
     }
