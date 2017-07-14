@@ -1,8 +1,8 @@
-module.exports = function (config) {
+module.exports = (config) => {
     config.set({
         files: [
-            { pattern: 'examples/**/*.spec.js', mutated: false, included: true },
-            { pattern: 'examples/**/*.js', mutated: true, included: false },
+            { pattern: 'examples/simple/myFile.spec.js', mutated: false, included: true },
+            { pattern: 'examples/simple/myFile.js', mutated: true, included: false },
         ],
         testRunner: 'mocha',
         testFramework: 'mocha',
